@@ -5,15 +5,15 @@ on:
    branches: [master]
 jobs:
   multi-stage-job:
-  runs_on: ubuntu-latest
-  steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
-  - name: create file 
-    run: touch file1
-  - name: list of files 
-    run: ls -ltrh
-  - name: disk usage
-    run: df -kh
+   runs_on: ubunt-latest
+   steps:
+   - name: Checkout repository
+     uses: actions/checkout@v4
+   - name: create file 
+     run: touch file1
+   - name: list of files 
+     run: ls -ltrh
+   - name: disk usage
+     run: df -kh
      
    
