@@ -10,7 +10,7 @@ jobs:
  runs-on: ubuntu-latest
  steps:
  -name: chcekout repository
-  uses: checkout/checkout@v4
+  uses: action/checkout@v4
 
   -name: Create file1
    run: touch file1
