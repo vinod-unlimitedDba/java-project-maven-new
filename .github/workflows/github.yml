@@ -1,0 +1,35 @@
+name: echo many steps 
+
+on:
+ push:
+   branches: [master]
+
+  jobs:
+    echo-job:
+      runs-on: ubuntu-latest
+      steps: 
+      - name: checking repository
+        uses: actions/checkout@v4
+      - name: github repo
+        run: echo "git"
+      - name: maven validate
+        run: echo "mvn validate"
+      - name: maven compile
+        run: echo "mvn compile"
+      - name: maven clean 
+        run: echo "mvn clean"
+      - name: maven test
+        run: echo "mvn test"
+      - name: maven package
+        run: echo "mvn clean package" 
+      - name: store arctifact
+        run: echo "artifact"
+      - name: deploy to tomcat
+        run: echo "deploy"
+
+
+
+      
+        run: "mvn clean package"
+       
+     
