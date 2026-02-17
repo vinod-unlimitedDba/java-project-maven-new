@@ -1,0 +1,21 @@
+name: copying file and ls and disk usage
+
+on:
+ push:
+   branches: [master]
+
+jobs:
+  multi-stage-jobs:
+  runs_on: ubuntu-latest
+  
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: create file 
+      run: touch file1
+    - name: list of file 
+      run: ls -ltrh
+    - name: disk usage
+      run: df -kh
+     
+   
