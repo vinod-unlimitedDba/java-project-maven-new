@@ -6,15 +6,14 @@ on:
 
 jobs:
  build:
-   runs_on: ubuntu-latest
+   runs-on: ubuntu-latest
    steps:
      - name: checking repostory
        uses: actions/checkout@v4
      - name: creating file
        run: tocuch file1
      - name: copying content
-       run: cat > file1 
-              " this is the file1"
+       run:  echo " this is the file1" > file1
      - name: display file1
        run: cat file1
 
