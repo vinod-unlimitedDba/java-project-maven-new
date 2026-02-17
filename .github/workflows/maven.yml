@@ -1,16 +1,19 @@
 name: simple running the script
 
 on:
- push:
- branches : [master]
+  push:
+      branches: [master]
 
 jobs:
-builds:
- runs-on: ubuntu-latest
- steps:
- -name: checkout repository
-   uses: actions/checkout@v4
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  -name: Create file1
-   run: touch file1
+      - name: Create file1
+        run: touch file1
  
+
+
+
