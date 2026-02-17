@@ -1,4 +1,4 @@
-name: echo many steps 
+name: pipeline steps
 
 on:
  push:
