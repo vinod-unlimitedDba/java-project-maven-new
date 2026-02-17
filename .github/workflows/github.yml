@@ -5,7 +5,7 @@ on:
    branches: [master]
 
    jobs:
-     echo-job:
+     print-job:
        runs-on: ubuntu-latest
        steps: 
        - name: checking repository
@@ -26,9 +26,6 @@ on:
          run: echo "artifact"
        - name: deploy to tomcat
          run: echo "deploy"
-         
-
-
       
         run: "mvn clean package"
        
