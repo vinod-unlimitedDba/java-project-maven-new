@@ -4,9 +4,8 @@ on:
  push:
  branches : [master]
 
-on: [push]
-
 jobs:
+builds:
  runs-on: ubuntu-latest
  steps:
  -name: checkout repository
