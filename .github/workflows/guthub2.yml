@@ -11,7 +11,7 @@ jobs:
      - name: checking repostory
        uses: actions/checkout@v4
      - name: creating file
-       run: tocuch file1
+       run: touch file1
      - name: copying content
        run:  echo " this is the file1" > file1
      - name: display file1
