@@ -1,4 +1,4 @@
-name: copying file and ls and disk usage
+name: copying file and listing and disk usage
 
 on:
  push:
@@ -7,13 +7,13 @@ jobs:
   multi-stage-job:
   runs_on: ubuntu-latest
   steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: create file 
-      run: touch file1
-    - name: list of file 
-      run: ls -ltrh
-    - name: disk usage
-      run: df -kh
+  - name: Checkout repository
+    uses: actions/checkout@v4
+  - name: create file 
+    run: touch file1
+  - name: list of files 
+    run: ls -ltrh
+  - name: disk usage
+    run: df -kh
      
    
