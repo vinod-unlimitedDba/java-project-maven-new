@@ -6,10 +6,10 @@ on:
 
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
+   runs-on: ubuntu-latest
+   steps:
         # 1.checkout the repo
-        - name: checking repo
+         - name: checking repo
           uses: actions/checkout@v4
 
           # 2.setup java sdk
@@ -30,11 +30,11 @@ jobs:
             name: mywebapp
             path: target/ *.war
 
-  deploy: 
+   deploy: 
      runs-on: ubuntu-latest
      needs: build
      environment: production
-  steps:
+   steps:
      # 5. Download war artifact
      - name: download artifact
        uses: actions/download-artifact@v4
