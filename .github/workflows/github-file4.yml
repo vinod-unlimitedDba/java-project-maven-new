@@ -12,7 +12,7 @@ jobs:
    - name: github repo
      uses: actions/checkout@v4
      with:
-      repository: 'vinod-unlimiteddba/java-project-maven-new'
+      repository: 'vinod-unlimitedDba/java-project-maven-new'
 
    #2.steup java
    - name: setting up java
