@@ -1,0 +1,44 @@
+name: github-project-test-compalin-package
+
+on:
+ push:
+   branches: [master]
+
+jobs:
+  build:
+  runs-on: ubuntu-latest
+  steps:
+   #1.github checkout repo
+    - name: github repo
+      uses: actions/checkout@v4
+     with:
+      repository 'vinod-unlimited/java-project-maven-new'
+
+   #2.steup java
+    - name: setting up java
+      uses: actions/setup-java@v4
+      with :
+        distribution: 'temurin'
+   #3.compile
+    - name: compile
+      run: mvn compile
+   #4. test project
+     - name: testing 
+       run: mvn test
+
+   #5. artifact the project
+     - name: arctifact the project
+       run: mvn clean package 
+
+    #6. war deploy
+      - name: deploy the code
+        run:  echo "Code is deploy - actual we need to learn tomcat, using tomcat we deploy"
+
+
+       
+
+
+
+
+
+        
