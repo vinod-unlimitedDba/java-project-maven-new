@@ -10,18 +10,18 @@ jobs:
    steps:
    #1.github checkout repo
    - name: github repo
-    uses: actions/checkout@v4
-    with:
+     uses: actions/checkout@v4
+     with:
       repository 'vinod-unlimited/java-project-maven-new'
 
    #2.steup java
    - name: setting up java
-    uses: actions/setup-java@v4
-    with :
-     distribution: 'temurin'
+     uses: actions/setup-java@v4
+     with :
+      distribution: 'temurin'
    #3.compile
    - name: compile
-    run: mvn compile
+     run: mvn compile
    #4. test project
    - name: testing 
      run: mvn test
