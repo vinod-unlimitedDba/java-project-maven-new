@@ -1,60 +1,43 @@
 name: java-project-first
 
 on:
- push:
-  branches: [master]
+  push:
+    branches: [master]
 
 jobs:
   build:
-   runs-on: ubuntu-latest
-   steps:
-        # 1.checkout the repo
-         - name: checking repo
-          uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+    # 1. Checkout the repo
+    - name: Checking repo
+      uses: actions/checkout@v4
 
-          # 2.setup java sdk
-         - name: installing java sdk
-           uses: actions/setup-java@v4
-           with:
-             distribution: 'temurin'
-             java-version: '17'
+    # 2. Setup Java SDK
+    - name: Installing Java SDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'  # Corrected spelling
+        java-version: '17'
 
-          # 3.maven installation
-         - name: build package
-           run: mvn clean package -Dskiptest
+    # 3. Maven installation
+    - name: Build package
+      run: mvn clean package -Dskiptest
 
-          # 4. upload to artifact 
-         - name: uplaod war artifact
-           uses: actions/upload-artifact@v4
-           with:
-            name: mywebapp
-            path: target/ *.war
+    # 4. Upload to artifact 
+    - name: Upload war artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: mywebapp
+        path: target/*.war
 
-   deploy: 
-     runs-on: ubuntu-latest
-     needs: build
-     environment: production
-   steps:
-     # 5. Download war artifact
-     - name: download artifact
-       uses: actions/download-artifact@v4
-       with:
-         name: mywebapp
-     
-
-
-     
-     
-  
-
-
-
-
-
-
-
-
-
-
-
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: production  # Corrected spelling
+    steps:
+    # 5. Download war artifact
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: mywebapp  # Corrected artifact name
 
