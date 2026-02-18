@@ -10,12 +10,12 @@ jobs:
   steps:
          # 1.checkout the repo
          - name: checking repo
-          uses: actions/checkout@v4
+           uses: actions/checkout@v4
 
           # 2.setup java sdk
          - name: installing java sdk
-          uses: actions/setup-java@v4
-          with:
+           uses: actions/setup-java@v4
+           with:
              distrubution: 'temurin'
              java-version: '17'
 
@@ -24,9 +24,9 @@ jobs:
            run: mvn clean package -Dskiptest
 
           # 4. upload to artifact 
-          - name: uplaod war artifact
-          uses: actions/upload-artifact@v4
-          with:
+         - name: uplaod war artifact
+           uses: actions/upload-artifact@v4
+           with:
             name: mywebapp
             path: target/ *.war
 
